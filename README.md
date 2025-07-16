@@ -1,2 +1,2 @@
-# data-science-misc
+# Data Science Misc
 Various data science projects
