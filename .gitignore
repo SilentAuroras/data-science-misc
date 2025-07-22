@@ -27,6 +27,7 @@ ENV/
 # IDE
 .idea/
 .vscode/
+*.txt
 
 # Jupyter Notebook
 .ipynb_checkpoints
