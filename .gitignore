@@ -17,3 +17,6 @@ ENV/
 # Jupyter Notebooks
 .ipynb_checkpoints/
 *.ipynb_checkpoints
+
+# Kaggle datasets
+pokemon.csv
