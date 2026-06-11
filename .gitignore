@@ -20,3 +20,12 @@ ENV/
 
 # Kaggle datasets
 pokemon.csv
+
+# Docker
+.docker/
+*.log
+*.pid
+
+# Data files
+*.json
+*.parquet
