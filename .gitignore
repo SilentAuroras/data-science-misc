@@ -1,5 +1,6 @@
-# Jetbrains
+# IDE folders
 .idea
+.vscode
 
 # Python
 __pycache__/

@@ -1,0 +1,6 @@
+flask
+numpy
+pydantic
+requests
+requests-cache
+sscws
