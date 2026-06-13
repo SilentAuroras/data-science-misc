@@ -1,5 +1,5 @@
 # Define docker build
-FROM python:3.12-alpine
+FROM python:3.12-slim
 
 # Copy consumer folder
 WORKDIR /consumer
@@ -8,8 +8,8 @@ WORKDIR /consumer
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 
-# Copy requirements file for consumer
-COPY consumer/requirements.txt .
+# Copy consumer app.py and requirements
+COPY consumer/ .
 
 # Install python requirements
 RUN pip install -r requirements.txt
@@ -18,4 +18,4 @@ RUN pip install -r requirements.txt
 EXPOSE 5000
 
 # Run flask
-CMD ["flask", "run", "--debug"]
+CMD ["python", "app.py"]

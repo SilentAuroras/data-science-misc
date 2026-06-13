@@ -1,6 +1,8 @@
 flask
+geopandas
 numpy
 pydantic
 requests
 requests-cache
+sqlalchemy
 sscws
