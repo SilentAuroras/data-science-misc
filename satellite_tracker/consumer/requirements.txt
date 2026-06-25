@@ -1,6 +1,8 @@
 flask
+geoalchemy2
 geopandas
 numpy
+psycopg2-binary
 pydantic
 requests
 requests-cache

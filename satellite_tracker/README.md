@@ -13,10 +13,10 @@ The build is overly complicated for learning purposes but follows the following 
 ### Deployment
 1. Run docker compose
 ```bash
-docker compose up -d
+docker compose -f docker-compose.yml -p satellite_tracker up -d
 ```
 
 2. Trigger the flask app
 ```bash
-curl localhost:5000/
+curl http://localhost:5000/
 ```
