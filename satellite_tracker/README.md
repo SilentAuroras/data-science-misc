@@ -20,3 +20,12 @@ docker compose -f docker-compose.yml -p satellite_tracker up -d
 ```bash
 curl http://localhost:5000/
 ```
+<img src="screenshots/docker.png" alt="drawing" width="300"/>
+
+3. Check postgis
+
+<img src="screenshots/postgis.png" alt="drawing" width="500"/>
+
+4. Open with QGIS
+
+<img src="screenshots/qgis.png" alt="drawing" width="500"/>
