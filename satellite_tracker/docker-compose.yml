@@ -1,0 +1,58 @@
+# Define services
+services:
+
+  # Backend layer - API consumer
+  consumer:
+    build: .
+    container_name: consumer
+    depends_on:
+      postgis:
+        condition: service_healthy
+    ports:
+      - "5000:5000"
+    environment:
+      POSTGIS_HOST: postgis
+      POSTGIS_PORT: 5432
+      POSTGRES_DB: gis_db
+      POSTGRES_USER: gis_user
+      POSTGRES_PASSWORD: gis_password
+      POSTGRES_TABLE: iss_positions
+
+  # Backend layer - PostGIS/PostgreSQL database
+  postgis:
+    image: postgis/postgis:17-master
+    container_name: postgis
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: gis_db
+      POSTGRES_USER: gis_user
+      POSTGRES_PASSWORD: gis_password
+      POSTGRES_TABLE: iss_positions
+    volumes:
+      - vol_postgis:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d gis_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Middle layer - GeoServer
+  geoserver:
+    image: docker.osgeo.org/geoserver:3.0.x
+    container_name: geoserver
+    depends_on:
+      postgis:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      - GEOSERVER_ADMIN_USER=geo-user
+      - GEOSERVER_ADMIN_PASSWORD=geo-password
+    volumes:
+      - vol_geoserver:/var/local/geoserver
+
+# Shared volume
+volumes:
+  vol_postgis:
+  vol_geoserver:
