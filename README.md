@@ -4,5 +4,4 @@ Miscellaneous small data science projects
 
 Descriptions
 - [Pokemon Analysis](/small_notebooks/Pokemon.ipynb) - Analysis of the Kaggle Dataset - https://www.kaggle.com/datasets/rounakbanik/pokemon
-- [MTG Analysis](/small_notebooks/MTG.ipynb) - Analysis of MTG Json data - https://mtgjson.com
-- [Satellite tracker](/satellite_tracker/) - Satellite tracker and mapping
+- [Satellite tracker](/satellite_tracker/README.md) - Satellite tracker and mapping
